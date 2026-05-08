@@ -521,7 +521,7 @@ function App() {
       setLoading(false);
       return;
     }
-    fetchRiskEvents({ limit: 1000 })
+    fetchRiskEvents({ limit: 10000 })
       .then(rows => {
         setDbData(rows.map(toUIRecord));
         setLoading(false);
