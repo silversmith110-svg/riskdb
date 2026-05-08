@@ -106,8 +106,8 @@ const ALL_CATEGORIES = RISK_TAXONOMY.flatMap(g =>
 //  Supabase 接続設定
 //  ※ SUPABASE_KEY は anon（公開用）キーを使用
 // ─────────────────────────────────────────────────────────────
-const SUPABASE_URL = "https://wshprbmphtipdvjlzbdt.supabase.co";
-const SUPABASE_KEY = "sb_publishable_ho6NEWsVfg8td7SLLtpvng_WSoRCBHq";
+const SUPABASE_URL = "%%SUPABASE_URL%%";
+const SUPABASE_KEY = "%%SUPABASE_KEY%%";
 
 async function fetchRiskEvents({ riskType, keyword, minSev, limit = 500 } = {}) {
   let url = `${SUPABASE_URL}/rest/v1/risk_events?select=*&limit=${limit}&order=event_date.desc`;
@@ -640,7 +640,6 @@ export default function App() {
 
         {detail && <DetailPanel item={detail} onClose={() => setDetail(null)} />}
       </div>
-      )}
 
       <footer style={{ borderTop: `1px solid ${C.border}`, padding: "10px 24px", display: "flex", justifyContent: "space-between", background: C.surface, flexShrink: 0 }}>
         <span style={{ color: C.textDim, fontSize: 11 }}>データソース：EDINET API · 東証適時開示 · 官報 · 金融庁 · 消費者庁</span>
