@@ -106,8 +106,8 @@ const ALL_CATEGORIES = RISK_TAXONOMY.flatMap(g =>
 //  Supabase 接続設定
 //  ※ SUPABASE_KEY は anon（公開用）キーを使用
 // ─────────────────────────────────────────────────────────────
-const SUPABASE_URL = "%%SUPABASE_URL%%";
-const SUPABASE_KEY = "%%SUPABASE_KEY%%";
+const SUPABASE_URL = https://wshprbmphtipdvjlzbdt.supabase.co;
+const SUPABASE_KEY = sb_publishable_ho6NEWsVfg8td7SLLtpvng_WSoRCBHq;
 
 async function fetchRiskEvents({ riskType, keyword, minSev, limit = 500 } = {}) {
   let url = `${SUPABASE_URL}/rest/v1/risk_events?select=*&limit=${limit}&order=event_date.desc`;
